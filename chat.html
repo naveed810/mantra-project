@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat with Expert | AgriSmart</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.chat-section{
+    max-width:800px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.chat-box{
+    height:400px;
+    overflow-y:auto;
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:10px;
+    background:#f9f9f9;
+    margin-bottom:20px;
+}
+
+.message{
+    margin-bottom:15px;
+    padding:12px 18px;
+    border-radius:10px;
+    max-width:75%;
+}
+
+.user{
+    background:#c8f7c5;
+    margin-left:auto;
+}
+
+.expert{
+    background:#e3f2fd;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+.chat-input button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.chat-input button:hover{
+    background:#1b5e20;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h1>🌱 AgriSmart</h1>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="chat-section">
+
+<h2 style="text-align:center;color:#2e7d32;margin-bottom:20px;">
+💬 Chat with Agriculture Expert
+</h2>
+
+<div class="chat-box" id="chatBox">
+
+<div class="message expert">
+Hello! 👋 I'm your AgriSmart expert. How can I help you today?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="message"
+placeholder="Type your message...">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 AgriSmart | Smart Farming Solutions</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+function sendMessage(){
+
+const input=document.getElementById("message");
+
+if(input.value.trim()=="") return;
+
+const chat=document.getElementById("chatBox");
+
+chat.innerHTML += `
+<div class="message user">
+${input.value}
+</div>
+
+<div class="message expert">
+Thank you for your message. Our agriculture expert will guide you with the best farming solution.
+</div>
+`;
+
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+
+}
+</script>
+
+</body>
+</html>
