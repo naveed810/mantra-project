@@ -66,7 +66,7 @@ nav a:hover{
     height:90vh;
     background:
     linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("../images/farm8.jpg");
+    url("..farm8.jpg");
     background-size:cover;
     background-position:center;
     display:flex;
