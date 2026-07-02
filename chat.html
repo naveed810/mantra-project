@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat with Expert | AgriSmart</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.chat-section{
+    max-width:800px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.chat-box{
+    height:400px;
+    overflow-y:auto;
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:10px;
+    background:#f9f9f9;
+    margin-bottom:20px;
+}
+
+.message{
+    margin-bottom:15px;
+    padding:12px 18px;
+    border-radius:10px;
+    max-width:75%;
+}
+
+.user{
+    background:#c8f7c5;
+    margin-left:auto;
+}
+
+.expert{
+    background:#e3f2fd;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+.chat-input button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.chat-input button:hover{
+    background:#1b5e20;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h1>🌱 AgriSmart</h1>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="chat.html">chatbot</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="chat-section">
+<h2 style="text-align:center;color:#2e7d32;margin-bottom:20px;">
+🤖 AgriSmart AI Chatbot
+</h2>
+
+<div class="chat-box" id="chatBox">
+
+<div class="message expert">
+🤖 <strong>AgriSmart AI</strong><br><br>
+Hello! 👋 Welcome to AgriSmart AI Chatbot.
+
+Ask me about:
+
+🌾 Rice
+🍅 Tomato
+💧 Irrigation
+🌤 Weather
+🧪 Fertilizer
+🌱 Soil
+🐛 Pest Control
+🚜 Farming
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="message"
+placeholder="Type your message...">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 AgriSmart | Smart Farming Solutions</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+function sendMessage(){
+
+const input = document.getElementById("message");
+const chat = document.getElementById("chatBox");
+
+let userMessage = input.value.trim();
+
+if(userMessage=="") return;
+
+const time = new Date().toLocaleTimeString([], {
+hour:'2-digit',
+minute:'2-digit'
+});
+
+chat.innerHTML += `
+<div class="message user">
+${userMessage}
+<br>
+<small>${time}</small>
+</div>
+`;
+
+if(msg.includes("hello") || msg.includes("hi")){
+reply="👋 Hello! Welcome to AgriSmart AI. How can I help you today?";
+}
+
+else if(msg.includes("rice")){
+reply="🌾 Rice grows best in fertile clay soil with plenty of water.";
+}
+
+else if(msg.includes("wheat")){
+reply="🌾 Wheat grows well in cool climates with well-drained loamy soil.";
+}
+
+else if(msg.includes("maize") || msg.includes("corn")){
+reply="🌽 Maize requires full sunlight and fertile soil for high yields.";
+}
+
+else if(msg.includes("cotton")){
+reply="🌱 Cotton grows best in black soil with warm temperatures.";
+}
+
+else if(msg.includes("tomato")){
+reply="🍅 Tomatoes need 6–8 hours of sunlight and regular watering.";
+}
+
+else if(msg.includes("potato")){
+reply="🥔 Potatoes grow well in loose, well-drained soil.";
+}
+
+else if(msg.includes("onion")){
+reply="🧅 Onions require moderate watering and fertile soil.";
+}
+
+else if(msg.includes("sugarcane")){
+reply="🎋 Sugarcane requires high water availability and warm weather.";
+}
+
+else if(msg.includes("groundnut")){
+reply="🥜 Groundnut grows well in sandy loam soil.";
+}
+
+else if(msg.includes("fertilizer")){
+reply="🧪 Use fertilizers based on soil testing. Balanced NPK improves crop growth.";
+}
+
+else if(msg.includes("organic")){
+reply="🌿 Organic farming avoids synthetic fertilizers and pesticides.";
+}
+
+else if(msg.includes("soil")){
+reply="🌱 Healthy soil contains sufficient nutrients, organic matter, and moisture.";
+}
+
+else if(msg.includes("ph")){
+reply="🧪 Most crops grow well in soil with a pH between 6.0 and 7.5.";
+}
+
+else if(msg.includes("water") || msg.includes("irrigation")){
+reply="💧 Irrigate crops early in the morning or evening to reduce evaporation.";
+}
+
+else if(msg.includes("drip")){
+reply="🚰 Drip irrigation saves water and delivers it directly to plant roots.";
+}
+
+else if(msg.includes("sprinkler")){
+reply="💦 Sprinkler irrigation distributes water evenly across the field.";
+}
+
+else if(msg.includes("weather")){
+reply="🌤 Always check the weather before irrigation or spraying pesticides.";
+}
+
+else if(msg.includes("rain")){
+reply="🌧 Delay irrigation if heavy rainfall is expected.";
+}
+
+else if(msg.includes("summer")){
+reply="☀ Increase watering frequency during hot summer days.";
+}
+
+else if(msg.includes("winter")){
+reply="❄ Most crops require less irrigation during winter.";
+}
+
+else if(msg.includes("pest")){
+reply="🐛 Use neem oil or approved pesticides to control pests.";
+}
+
+else if(msg.includes("disease")){
+reply="🦠 Remove infected plants and consult an agricultural expert for treatment.";
+}
+
+else if(msg.includes("fungus")){
+reply="🍄 Fungicides help prevent fungal diseases in crops.";
+}
+
+else if(msg.includes("weed")){
+reply="🌿 Remove weeds regularly to reduce competition for nutrients.";
+}
+
+else if(msg.includes("harvest")){
+reply="🌾 Harvest crops only after they reach full maturity.";
+}
+
+else if(msg.includes("seed")){
+reply="🌱 Use certified, disease-free seeds for better productivity.";
+}
+
+else if(msg.includes("temperature")){
+reply="🌡 Different crops require different temperature ranges for healthy growth.";
+}
+
+else if(msg.includes("humidity")){
+reply="💧 High humidity can increase the risk of fungal diseases.";
+}
+
+else if(msg.includes("tractor")){
+reply="🚜 Modern tractors improve efficiency in land preparation and cultivation.";
+}
+
+else if(msg.includes("government")){
+reply="🏛 Visit your local agriculture department for the latest government schemes.";
+}
+
+else if(msg.includes("loan")){
+reply="🏦 Farmers can apply for agricultural loans through banks and government schemes.";
+}
+
+else if(msg.includes("market")){
+reply="📈 Check local market prices before selling your produce.";
+}
+
+else if(msg.includes("profit")){
+reply="💰 Reduce costs and improve crop quality to increase profits.";
+}
+
+else if(msg.includes("farm")){
+reply="🌾 Proper planning and modern techniques improve farm productivity.";
+}
+
+else if(msg.includes("crop")){
+reply="🌱 Choose crops based on soil type, climate, and water availability.";
+}
+
+else if(msg.includes("thank")){
+reply="😊 You're welcome! Happy farming!";
+}
+
+else if(msg.includes("bye")){
+reply="👋 Goodbye! Wishing you a successful harvest.";
+}
+
+else{
+reply="🤖 I couldn't understand that. Please ask about crops, soil, weather, irrigation, fertilizer, pests, farming, or government schemes.";
+}
+chat.innerHTML += `
+<div class="message expert">
+🤖 <strong>AgriSmart AI</strong><br><br>
+${reply}
+<br>
+<small>${time}</small>
+</div>
+`;
+
+input.value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+document.getElementById("message").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+e.preventDefault();
+
+sendMessage();
+
+}
+
+});
+</script>
+
+
+</body>
+</html>
